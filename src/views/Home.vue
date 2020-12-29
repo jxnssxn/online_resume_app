@@ -1,9 +1,71 @@
 <template>
   <div class="home">
     <h1>{{ message }}</h1>
+    <h1>{{ student }}</h1>
     <p><h1>My name</h1></p>
+
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+    <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg" class="d-block w-75" alt="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg" class="d-block w-75" alt="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg">
+    </div>
+    <div class="carousel-item">
+      <img src="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg" class="d-block w-75" alt="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+
+<!-- <p>
+  First Name - first_name
+  Last Name - last_name
+  Email - email
+  Phone Number - phone_number
+  Short Bio - short_bio
+  LinkedIn URL - linkedin_url
+  Twitter Handle - twitter_handle
+  Personal Blog/Website URL - personal_blog_url
+  Online Resume URL - resume_url
+  Github URL - githhub_url
+  Photo - photo
+<br>
+<br>
+  Experience
+  Start Date - start_date
+  End Date - end_date
+  Job Title - job_title
+  Company Name - company_name
+  Details (one long text field) - details
+<br>
+<br>
+  Details (one long text field) - details
+  Skills
+  Skill Name (E.g. Ruby, HTML, CSS) - skill_name
+  Capstone
+  Name - name
+  Description - description
+  URL - url
+  Screenshot (Optional)
+</p> -->
+
     <h1>Summary/Bio</h1>
-    <p><h1><img src= "https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg"></h1></p>
+    <!-- <p><h1><img src= "https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg"></h1></p> -->
   </div>
 </template>
 
@@ -14,11 +76,19 @@
 export default {
   data: function () {
     return {
+      student: [],
       message: "Online Resume App",
     };
   },
   created: function () {},
   methods: {
+    indexStudent: function (theResume) {
+      console.log("resume index");
+      axios.get("api/resume").then((response) => {
+        console.log(response.data);
+        this.student = response.data;
+      });
+    },
     showResume: function (theResume) {
       console.log(theResume);
       this.currentResume = theResume;
