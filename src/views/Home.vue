@@ -20,11 +20,11 @@
     </div>
       <!-- second student -->
     <div class="carousel-item">
-      <img src="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg" class="d-block w-75" alt="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg">
+      <button v-on:click="showResume(resume)"><img src="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg" class="d-block w-75" alt="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg"></button>
     </div>
       <!-- third student -->
     <div class="carousel-item">
-      <img src="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg" class="d-block w-75" alt="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg">
+      <button v-on:click="showResume(resume)"><img src="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg" class="d-block w-75" alt="https://fashionjournal.com.au/wp-content/uploads/2018/01/Grumpy-Cat-Portrait.jpg"></button>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
